@@ -11,7 +11,9 @@ public class Instantiation : MonoBehaviour
 
     //public ArrayList<Vector3> points = new ArrayList<Vector3>(); 
     //public Transform[] wayPoints = new Transform[100];
-    private const int PUNKTMENGE = 100;
+    private const int PUNKTMENGE = 360;
+    public int stretch = 15;
+    public float density_factor = 0.5f;
     public Vector3[] points = new Vector3[PUNKTMENGE];
 
     /// <summary>
@@ -19,11 +21,13 @@ public class Instantiation : MonoBehaviour
     /// </summary>
     void Awake()
     {
+        GameObject plane = GameObject.FindGameObjectWithTag("Boden");
+        
         for (int x = 0; x < points.Length; x++)
         {
-            Instantiate(brick, new Vector3(FvonT(x), 1, GvonT(x)), Quaternion.identity);
-            Instantiate(brick, new Vector3(FvonT_inner(x), 1, GvonT_inner(x)), Quaternion.identity);
-            Vector3 posVector = new Vector3((float) 0.95 * FvonT(x), 1, (float) 0.95 * GvonT(x));
+            Instantiate(brick, new Vector3(FvonT(x), plane.transform.position.y + 0.1f, GvonT(x)), Quaternion.identity);
+            Instantiate(brick, new Vector3((float) 0.97f * FvonT(x), 1, (float) 0.97f * GvonT(x)), Quaternion.identity);
+            Vector3 posVector = new Vector3((float) 0.99 * FvonT(x), 1, (float) 0.99 * GvonT(x));
             points[x] = posVector;
             Instantiate(playerC, posVector, Quaternion.identity);
         }
@@ -36,25 +40,13 @@ public class Instantiation : MonoBehaviour
 
     float FvonT(float t)
     {
-        float x = (50 * Mathf.Cos(2 * Mathf.PI / points.Length * t));
+        float x = (stretch * Mathf.Cos(2 * Mathf.PI / points.Length * t));
         return x;
-    }
-
-    float FvonT_inner(float t)
-    {
-        float x = (50 * Mathf.Cos(2 * Mathf.PI / points.Length * t));
-        return (float) 0.9 * x;
     }
 
     float GvonT(float t)
     {
-        float z = (50 * Mathf.Sin(2 * Mathf.PI / points.Length * t));
+        float z = (stretch * Mathf.Sin(2 * Mathf.PI / points.Length * t));
         return z;
-    }
-
-    float GvonT_inner(float t)
-    {
-        float z = (50 * Mathf.Sin(2 * Mathf.PI / points.Length * t));
-        return (float) 0.9 * z;
     }
 }

@@ -25,7 +25,7 @@ public class Bewegung : MonoBehaviour {
 	void Update () {
 		
         
-        //Vector3[] points = gameObject.GetComponentInParent<Testkreis>().points;
+   
         
 		if(currentWayPoint < this.wayPointList.Length)
          {
