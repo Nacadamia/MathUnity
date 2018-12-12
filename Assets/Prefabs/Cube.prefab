@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4085835571985460}
   - component: {fileID: 33592378445207960}
   - component: {fileID: 23741962281847528}
+  - component: {fileID: 122861525523193218}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -83,3 +84,14 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1223016012747116}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!122 &122861525523193218
+Halo:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1223016012747116}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_Size: 0.3

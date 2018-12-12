@@ -44,7 +44,8 @@ public class movement : MonoBehaviour
         float step = speed * Time.deltaTime;
 
 
-        transform.LookAt(target.position);
+        //  transform.LookAt(target.position); //<--- alte, ruckelige Methode
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(target.position), Time.deltaTime * speed);
         transform.position = Vector3.MoveTowards(transform.position, target.position, step);
 
 
