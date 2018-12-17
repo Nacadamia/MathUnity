@@ -30,7 +30,26 @@ Die Szene enthält den einen Kreis, der beim Start erzeugt wird. Dieser wird mit
 Dieses Script dient dazu, den Kreis und die PlayerC Punkte zu erzeugen. In der Awake()-Methode werden mittels einer For-Schleife
 die Bricks und die PLayerC Objekte erzeugt. Die Plane wird anhand ihres Namens \glqq Boden{}\grqq{} gesucht. Relativ zum Boden wird die Y - Höhe der Bricks berechnet.
 Zusätzlich werden die Positionen der einzelnen PlayerC in ein Array geschrieben, dies dient der späteren Pfadanimation.
-Es befinden sich noch zwei weitere Funktionen im Script. Diese werden bei jedem Brick bzw. PlayerC aufgerufen. Die X.Koordinate einer Paramterkurve wird über die Funktion $ f(t) = \cos(t) $ definiert. Für Z gilt $g(t) = \sin(t) $ analog. In diesem Koordinatensystem beschreibt Y die Hochachse.
+Es befinden sich noch zwei weitere Funktionen im Script. Diese werden bei jedem Brick bzw. PlayerC aufgerufen. Die X.Koordinate einer Paramterkurve wird über die Funktion $ f(t) = \cos(t) $ definiert. Für Z gilt $g(t) = \sin(t)$ analog. In diesem Koordinatensystem beschreibt Y die Hochachse.
+
+\textbf{Movement.cs}
+Dieses Script bewegt den Spieler auf dem Pfad. Dazu werden das Player-GameObject und alle waypoints in der Szene gesucht und adressierbar gemacht.
+Wenn die Liste nicht leer ist, dann wird der Spieler und dessen Ziel auf das erste PlayerC gesetzt. 
+\emph{Hinweis: Wenn die Liste leer ist, dann kommt es zu einer NullPointer Exception. Jedoch stürzt die Entwicklungsumgebung nicht ab, sondern sie verahrrt im Pause-Modus.}
+
+In der FixedUpdate()-Methode wird nun die Sicht des Spielers auf den nächsten Wegpunkt ausgerichtet. Danach wird der Spieler auf dieses Ziel zubewegt. Sobald der Spieler eine Mindestdistanz zu einem Wegpunkt unterschreitet, wird der Wegpunkt inkrementiert und der Spieler weiter bewegt.
+
+\textbf{CameraController.cs}
+Der CamerController sorgt dafür, das die Kamera (in diesem Fall das SteamVR Camera Rig) an der Capsule haftet. Beim Instanzieren, wird der Spieler über den Tag \glqq Player\grqq{} angesprochen und die Position der Camera auf die Position des Spielers gesetzt. 
+
+Um eine Isometrische oder Third-Person-View zu erzeugen müsste die Kamera einen Offset zur Position des Spielers haben. Dies hat sich im hier vorliegenden Kontext als nicht zweckmäßig erwiesen. 
+
+\textbf{GraphScene.cs}
+Dieses Script ist dem Button, der zur Szene mit der Semikubischen Parabel führt angehängt. Es ruft den SceneManager von Unity auf und übergibt die gewünschte Szene an die Anwendung.
+
+\textbf{SpiralScene.cs}
+Dieses Script ist dem Button, der zur Szene mit der Spirale führt angehängt. Es ruft den SceneManager von Unity auf und übergibt die gewünschte Szene an die Anwendung.
+
 
 \section{Quantoren und Normalform}
 \

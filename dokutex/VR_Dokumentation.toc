@@ -16,14 +16,14 @@
 \contentsline {subsection}{\numberline {3.1.1}Elemente}{5}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Scripte}{6}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}Quantoren und Normalform}{6}{section.3.2}
-\contentsline {section}{\numberline {3.3}Resolution}{6}{section.3.3}
-\contentsline {section}{\numberline {3.4}Automatische Theorembeweiser}{6}{section.3.4}
-\contentsline {section}{\numberline {3.5}Anwendungen}{6}{section.3.5}
-\contentsline {chapter}{\numberline {4}Grenzen der Logik}{7}{chapter.4}
-\contentsline {section}{\numberline {4.1}Das Suchraumproblem}{7}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Problemstellung}{7}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}L\IeC {\"o}sungsans\IeC {\"a}tze}{7}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Entscheidbarkeit und Unvollst\IeC {\"a}ndigkeit}{8}{section.4.2}
-\contentsline {section}{\numberline {4.3}Ein Beispiel}{8}{section.4.3}
-\contentsline {section}{\numberline {4.4}Modellierung von Unsicherheit}{10}{section.4.4}
-\contentsline {chapter}{Literatur}{11}{chapter*.3}
+\contentsline {section}{\numberline {3.3}Resolution}{7}{section.3.3}
+\contentsline {section}{\numberline {3.4}Automatische Theorembeweiser}{7}{section.3.4}
+\contentsline {section}{\numberline {3.5}Anwendungen}{7}{section.3.5}
+\contentsline {chapter}{\numberline {4}Grenzen der Logik}{8}{chapter.4}
+\contentsline {section}{\numberline {4.1}Das Suchraumproblem}{8}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Problemstellung}{8}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}L\IeC {\"o}sungsans\IeC {\"a}tze}{8}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Entscheidbarkeit und Unvollst\IeC {\"a}ndigkeit}{9}{section.4.2}
+\contentsline {section}{\numberline {4.3}Ein Beispiel}{9}{section.4.3}
+\contentsline {section}{\numberline {4.4}Modellierung von Unsicherheit}{11}{section.4.4}
+\contentsline {chapter}{Literatur}{12}{chapter*.3}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.12.17)  18 DEC 2018 00:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.12.17)  18 DEC 2018 00:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1153,21 +1153,21 @@ Package babel Info: Redefining ngerman shorthand "~
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 54.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 54.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 56.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 56.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 59.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 59.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 44.
+(babel)             in language  on input line 63.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 44.
+(babel)             in language  on input line 63.
 )
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 249.
@@ -1178,6 +1178,15 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 249.
  [6]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 249.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 249.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 249.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 249.
+ [7]
 \openout2 = `kapitel3.aux'.
 
  (./kapitel3.tex
@@ -1198,7 +1207,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 21.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 21.
-[7
+[8
 
 
 
@@ -1234,7 +1243,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 42.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 42.
-[8]
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 42--45
 
  []
@@ -1261,7 +1270,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 71.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 71.
-[9]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
@@ -1285,7 +1294,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 250.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 250.
- [10] (./VR_Dokumentation.bbl
+ [11] (./VR_Dokumentation.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
@@ -1309,7 +1318,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 281.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 281.
-[11
+[12
 
 
 ]
@@ -1486,8 +1495,8 @@ Package rerunfilecheck Info: File `VR_Dokumentation.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 281.
  ) 
 Here is how much of TeX's memory you used:
- 19553 strings out of 492649
- 318800 string characters out of 6129621
+ 19554 strings out of 492649
+ 318807 string characters out of 6129621
  512336 words of memory out of 5000000
  22943 multiletter control sequences out of 15000+600000
  32123 words of font info for 50 fonts, out of 8000000 for 9000
@@ -1505,10 +1514,10 @@ al/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive
 exmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-di
 st/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-dist/font
 s/type1/urw/palatino/uplri8a.pfb>
-Output written on VR_Dokumentation.pdf (12 pages, 125410 bytes).
+Output written on VR_Dokumentation.pdf (13 pages, 129860 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
- 43 named destinations out of 1000 (max. 500000)
+ 232 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
+ 44 named destinations out of 1000 (max. 500000)
  177 words of extra memory for PDF output out of 10000 (max. 10000000)
 
