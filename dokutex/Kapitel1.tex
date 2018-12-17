@@ -1,4 +1,4 @@
-% !TeX root = Hausarbeit.tex
+
 \chapter{Einleitung}
 \label{Einleitung}
 
@@ -27,7 +27,9 @@ In diesem Projekt wurde Rider verwendet, da im Schwerpunkt auf Computern mit den
 \section{HTC Vive}
 \label{Vive}
 Das Zielmedium der Anwendung ist die HTC Vive, eine VR-Brille. Die Konfiguration an der Hochschule beinhaltet eine Brille, zwei Controller (einer Pro Hand) und die Sensoren, um die Position und Ausrichtung des Spielers im Raum zu erfassen. 
-Der eingesetzte PC ist ein potenter Spielecomputer mit entsprechender Grafik Hardware. 
+Der eingesetzte PC ist ein potenter Spielecomputer mit entsprechender Grafikhardware.
+
+ 
 
 \section{Beweisverfahren}
 \label{Beweisverfahren}
@@ -42,26 +44,7 @@ Der eingesetzte PC ist ein potenter Spielecomputer mit entsprechender Grafik Har
 
 
 \section{Berechenbarkeit und Komplexität}
-\label{Berechenbarkeit und Komplexität}
 
-Der intuitive Weg ein Modell einer Formel zu bestimmen ist, einfach stur die Wahrheitstabellen aufzuschreiben und auszuwerten führt in jedem Fall in endlicher Zeit zum Ziel, dem bestimmen aller Modelle einer Formel. Es können Formeln jeden Typs entschieden werden. Dieses Verfahren lässt die benötigte Rechenzeit exponentiell wachsen, da jede Variable zwei Zustände haben kann ist die Komplexität $2^{n}$. \linebreak
-
-Ein Lösungsansatz ist die Verwendung von semantischen Bäumen, diese betrachten nur Variablen die in den jeweiligen Klauseln vorkommen und sparen so Rechenzeit. Im worst case jedoch sind alle Variablen in den Klauseln vorhanden, was wiederum zur exponentiellen Komplexität führt.
-
-Die in \ref{Resolution_aussage} besprochene Resolution hat ebenfalls einen \glqq schlechten \grqq{} worst case. Die Zahl der abgeleiteten Klauseln wächst expotentiell mit den anfänglich vorhandenen Klauseln.
-
-Da es offensichtlich keine gut skalierende Methode für alle Fälle gibt, muss der Algorithmus passend zum Problem ausgewählt werden. Wolfgang Ertel formuliert eine Faustregel: Bei vielen Klauseln mit wenigen Variablen ist die Wahrheitstafelmethode vorzuziehen. Wenige Klauseln mit vielen Variablen lassen sich mit der Resolution wahrscheinlich schneller beweisen.
-
-Zur Zeit wurde noch kein schnellerer Algorithmus zum Beweisen von Aussagen gefunden. Wolfgang Ertel beruft sich auf einen Beweis des Begründers der Komplexitätstheorie. Dieser zeigte, das das sog. 3-Sat-Problem (Alle KNF-Formeln, deren Klauseln genau drei Literale haben) NP-vollständig ist. Vermutlich trifft dies auf auch auf eine allgemeine Lösung zu. 
-
-Die Eigenschaften der Hornklauseln jedoch erlauben es einen Algorithmus zu verwenden der die Rechenzeit \glqq nur \grqq{ } linear mit der Anzahl der Literale in der Formel wächst.
 
 \section{Anwendungen und Grenzen}
-\label{Anwendung und Grenzen}
-
-Das automatisierte Beweisen von Aussagen ist aus der Entwicklung in der Digitaltechnik nicht mehr wegzudenken. Sei es beim Schaltungsentwurf oder beim Testen von Mikroelektronik bzw. Prozessoren. Hierfür existieren dedizierte Beweisverfahren.
-
-Im Bereich der KI sind einfache Systeme mit Aussagenlogischen Beweisern im Einsatz. Jedoch sind Vorraussetzungen zu beachten. Variablen müssen diskret sein, ohne Beziehung und die diskreten Werte sollten wenige sein.   
-
-Ein geeigneterer Weg ist die Prädikatenlogik, die im Folgenden besprochen wird.
-
+\
