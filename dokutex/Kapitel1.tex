@@ -1,0 +1,67 @@
+% !TeX root = Hausarbeit.tex
+\chapter{Einleitung}
+\label{Einleitung}
+
+Parameterkurven haben Eigenschaften, die sich nur schlecht auf Papier bzw. zweidimensional darstellen lassen.
+In der Unity Umgebung besteht die Möglichkeit mittels Pfadanimation die Parameterkurven darzustellen. 
+Diese Projektarbeit zeigt exemplarisch drei verschiedene Parameterkurven, die in der Virtuellen Realität dargestellt werden, um Eigenschaften der Kurven erlebbar zu machen. 
+
+\chapter{Verwendete Technologie}
+\label{Technologie}
+\section{Unity}
+Unity ist eine Grafik-Engine, mit deren Hilfe 3D-Anwendungen realisiert werden. Es exisitert ein integrierter Editor, der ähnlich einem 3D-Grafik Programm, dazu verwendet wird die entsprechende Umgebung zu gestalten. Die fertige Anwendung bzw. das Spiel können für unterschiedlichste Plattformen von Android bis hin zu Linux erzeugt werden. Diese Anwedungen sind unabhängig von der Unity Entwicklungsumgebung lauffähig. Es wird ein Kompilat mit Abhänigkeiten und Ressourcen erzeugt.
+
+\subsection{SciptEngine}
+Unity stellt eine ScripEngine zur Verfügung, mit deren Hilfe derer die Umgebung und die darin vorhandenen Objekte beinflusst werden kann. Als Sprache für die Skripte kommt C\# zum Einsatz. Die Logik und der Ablauf der Ereignisse in der Anwendung werden durch Skripte festgelegt. Als Framework kommt das \emph{Mono Framework} zum Einsatz, eine Open Source Implementierung von Microsofts \emph{.NET Framework}.
+
+\subsection{SteamVR Plugin für Unity}
+Es existiert ein Plugin für die HTC Vive, eine VR-Brille. Dieses Plugin ist über den in Unity integrierten Asset Store zu beziehen. Es beinhaltet unter anderem sogenannte Prefabs, vorgefertigte Objekte, die in eine Szene eingesetzt werden können. Damit die Vive inklusive ihrer Controller funktioniert müssen die Prefabs [Steam VR] und [Camera Rig] in die Szene eingesetzt werden. 
+
+\section{JetBrains Rider}
+\label{Rider}
+Die Standart Entwicklungsumgebung für Unity ist \emph{Microsoft Visual Studio 2017 in der Community Edition (kostenlos)}. Grundsätzlich ist jede IDE die C\# unterstüzt geeignet. Visual Studio 2017 und JetBrains Rider bieten zudem die Möglichkeit, sich an den Unity Prozess anzuhängen und einen Debugger einzusetzen. 
+
+In diesem Projekt wurde Rider verwendet, da im Schwerpunkt auf Computern mit den Betriebsystem MacOS X entwickelt wurde und die Rider IDE in dieser Umgebung performanter und agiler ist.
+
+
+\section{HTC Vive}
+\label{Vive}
+Das Zielmedium der Anwendung ist die HTC Vive, eine VR-Brille. Die Konfiguration an der Hochschule beinhaltet eine Brille, zwei Controller (einer Pro Hand) und die Sensoren, um die Position und Ausrichtung des Spielers im Raum zu erfassen. 
+Der eingesetzte PC ist ein potenter Spielecomputer mit entsprechender Grafik Hardware. 
+
+\section{Beweisverfahren}
+\label{Beweisverfahren}
+
+\section{Resolution}
+\label{Resolution_aussage}
+
+
+\section{Hornklauseln}
+\label{Hornklauseln}
+
+
+
+\section{Berechenbarkeit und Komplexität}
+\label{Berechenbarkeit und Komplexität}
+
+Der intuitive Weg ein Modell einer Formel zu bestimmen ist, einfach stur die Wahrheitstabellen aufzuschreiben und auszuwerten führt in jedem Fall in endlicher Zeit zum Ziel, dem bestimmen aller Modelle einer Formel. Es können Formeln jeden Typs entschieden werden. Dieses Verfahren lässt die benötigte Rechenzeit exponentiell wachsen, da jede Variable zwei Zustände haben kann ist die Komplexität $2^{n}$. \linebreak
+
+Ein Lösungsansatz ist die Verwendung von semantischen Bäumen, diese betrachten nur Variablen die in den jeweiligen Klauseln vorkommen und sparen so Rechenzeit. Im worst case jedoch sind alle Variablen in den Klauseln vorhanden, was wiederum zur exponentiellen Komplexität führt.
+
+Die in \ref{Resolution_aussage} besprochene Resolution hat ebenfalls einen \glqq schlechten \grqq{} worst case. Die Zahl der abgeleiteten Klauseln wächst expotentiell mit den anfänglich vorhandenen Klauseln.
+
+Da es offensichtlich keine gut skalierende Methode für alle Fälle gibt, muss der Algorithmus passend zum Problem ausgewählt werden. Wolfgang Ertel formuliert eine Faustregel: Bei vielen Klauseln mit wenigen Variablen ist die Wahrheitstafelmethode vorzuziehen. Wenige Klauseln mit vielen Variablen lassen sich mit der Resolution wahrscheinlich schneller beweisen.
+
+Zur Zeit wurde noch kein schnellerer Algorithmus zum Beweisen von Aussagen gefunden. Wolfgang Ertel beruft sich auf einen Beweis des Begründers der Komplexitätstheorie. Dieser zeigte, das das sog. 3-Sat-Problem (Alle KNF-Formeln, deren Klauseln genau drei Literale haben) NP-vollständig ist. Vermutlich trifft dies auf auch auf eine allgemeine Lösung zu. 
+
+Die Eigenschaften der Hornklauseln jedoch erlauben es einen Algorithmus zu verwenden der die Rechenzeit \glqq nur \grqq{ } linear mit der Anzahl der Literale in der Formel wächst.
+
+\section{Anwendungen und Grenzen}
+\label{Anwendung und Grenzen}
+
+Das automatisierte Beweisen von Aussagen ist aus der Entwicklung in der Digitaltechnik nicht mehr wegzudenken. Sei es beim Schaltungsentwurf oder beim Testen von Mikroelektronik bzw. Prozessoren. Hierfür existieren dedizierte Beweisverfahren.
+
+Im Bereich der KI sind einfache Systeme mit Aussagenlogischen Beweisern im Einsatz. Jedoch sind Vorraussetzungen zu beachten. Variablen müssen diskret sein, ohne Beziehung und die diskreten Werte sollten wenige sein.   
+
+Ein geeigneterer Weg ist die Prädikatenlogik, die im Folgenden besprochen wird.
+

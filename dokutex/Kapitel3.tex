@@ -1,0 +1,81 @@
+% !TeX root = Hausarbeit.tex
+\chapter{Grenzen der Logik}
+\label{Grenzen der Logik}
+
+
+
+\section{Das Suchraumproblem}
+\subsection{Problemstellung}
+Bei der Suche nach Beweisen existieren, bei fast jedem Schritt, bis zu unendlich viele Möglichkeiten Inferenzregeln anzuwenden.
+Nimmt man den Worst-Case an, so müssen alle Möglichkeiten ausprobiert werden. Dies führt zu einem Zeitaufwand, welcher diesen Prozess nicht sinnvoll umsetzbar macht. \\
+Es gibt jedoch Möglichkeiten mit diesem extrem anwachsenden Suchraum umzugehen.
+So zeigt sich, dass Menschen, obwohl viel langsamer in der Ausführung von Inferenzen, durchaus schneller beim Lösen schwieriger Probleme sein können.
+Dies resultiert aus Faktoren wie Intuition, Lemmas (Hilfssätzen) und Erfahrung, durch welche der Suchraum extrem verkleinert werden kann und somit eine deutliche Zeitersparnis mit sich bringen.\\
+Das Ziel muss es also sein diese Faktoren in irgendeiner Form auf die Maschine übertragen werden.
+
+\subsection{Lösungsansätze} 
+Die Idee ist nun, die zuvor genannten Eigenschaften auf Maschinen zu übertragen.
+Dazu kommen verschiedene Ansätze in Frage. So können zum Beispiel Heuristiken integriert werden. Durch diese wird versucht die Intuition nachzubilden.\\
+Um dies zu erreichen, wird maschinelles Lernen eingesetzt. Es werden aus vorangegangenen erfolgreichen Beweisen Klauselpaare als positiv oder negativ gespeichert und es wird versucht, aus diesen Trainingsdaten ein Programm zu erzeugen, welches Klauselpaare heuristisch bewerten kann.\\
+Ein weiterer Ansatz ist, durch interaktive Systeme den Menschen bei der Beweisführung zu unterstützen. So bleibt die Kontrolle über die Beweisführung zwar beim Menschen, aber es können zum Beispiel Algebraprogramme eingesetzt werden. Diese können für den Menschen schwierige mathematische Vorgänge übernehmen ohne die intuitive Lenkung der Beweisführung durch den Menschen aufzugeben.
+
+\section{Entscheidbarkeit und Unvollständigkeit}
+Durch die Prädikatenlogik erster Stufe gibt es korrekte und vollständige
+Kalküle und Theorembeweiser. Man kann demnach bei einer wahren Aussage in endlicher Zeit Beweisen, dass sie tatsächlich wahr ist. Dies gilt jedoch nicht für unwahre Aussagen, da die Menge der allgemeingültigen Formeln der Prädikatenlogik erster Stufe halbentscheidbar ist.\\
+Ist eine Aussage nicht allgemeingültig, so kann es sein, dass der Beweiser nicht hält. Dies ist unpraktisch, da für eine bereits als wahr bekannte Aussage kein Beweis mehr notwendig ist. Für eine möglicherweise unwahre jedoch schon.
+Die Prädikatenlogik erweist sich als zu mächtige Sprache, um noch entscheidbar zu sein. \\
+Möchte man jedoch eine Logik höherer Stufe quantifizieren, so ergibt sich schnell das Problem, dass die Vollständigkeit einer Logik sofort verloren geht, wenn man sie auch nur minimal erweitert.\\
+Kurt Gödel hat in diesem Kontext den Gödelschen Unvollständigkeitssatz bewiesen. Dieser besagt, dass jedes Axiomensystem für die Natürlichen Zahlen mit Addition und Multiplikation (die Arithmetik) unvollständig ist. Das heißt, es gibt in der Arithmetik wahre Aussagen, die nicht beweisbar sind [vgl. S.68].
+
+\section{Ein Beispiel}
+Ein fundamentales Problem der Logik und passende Lösungsansätze, zeigt das folgende Beispiel [vgl. S. 71,72]
+\\
+\\
+Es sei gegeben:\\
+1. Tweety ist ein Pinguin\\
+2. Pinguine sind Vögel\\
+3. Vögel können fliegen\\\\
+
+In Prädikatenlogik 1 ergibt sich als Wissensbasis:
+
+
+$pinguin(tweety)$\\
+$pinguin(x) \Rightarrow vogel(x)$\\
+$vogel(x) \Rightarrow fliegen(x)$\\
+
+
+Es lässt sich nun $fliegen(tweety)$ ableiten, jedoch können Pinguine nicht fliegen. Demnach gilt:
+
+
+$pinguin(x)\Rightarrow \neg fliegen(x)$\\
+
+daraus kann $ \neg fliegen(tweety) $abgeleitet werden, was jedoch im Widerspruch zu fliegen(tweety) steht. Hier erkennen wir die Eigenschaft der Monotonie. Die Definition der Monotonie besagt, dass eine Logik monoton ist, wenn für eine beliebige Wissensbasis WB und eine beliebige Formel $\varphi$ die Menge der aus WB ableitbaren Formeln eine Teilmenge 
+der aus WB $\bigcup \varphi$ ableitbaren Formeln ist [vgl. S. 70].
+
+Wird die Formelmenge also erweitert, wächst die Menge der beweisbaren Aussagen monoton. Demnach führt eine Erweiterung der Wissensbasis nie zum Ziel. Es muss also die falsche Aussage 3, Vögel können fliegen, durch eine präzisere Aussage ersetzt werden. Die neue Aussage heißt nun "Vögel außer Pinguine können fliegen". Aus dieser neuen Wissensbasis ergeben sich neue Klauseln:
+
+
+$pinguin(tweety)$\\
+$pinguin(x) \Rightarrow vogel(x)$\\
+$vogel(x) \bigwedge \neg pinguin(x) \Rightarrow fliegen(x)$\\
+$pinguin(x) \Rightarrow \neg fliegen(x)$\\
+
+Der vorher entstandene Widerspruch ist nun behoben. Jedoch bleibt das Problem der erweiterbaren Wissensbasis weiter bestehen. Erweitert man nun diese um einen weiteren Typ Vogel so lässt sich mit der neuen Wissensbasis keinerlei Aussage über die Flugeigenschaften der neuen Vogelart machen. Es muss zuerst definiert werden, dass die neue Vogelart kein Pinguin ist. 
+Folgt man dieser Logik weiter, so muss für jede Vogelart welche fliegen kann definieren, dass sie keine Pinguine sind. Jedoch muss man dann noch für alle anderen nicht fliegenden Vögel ebenfalls die Ausnahmen vergeben.\\
+Eine Lösung dieses Problems ist die Einführung einer Default-Logik, welche Default-Regeln etabliert. In diesem Beispiel wäre "Vögel können fliegen" solch eine Regel. Nun müssten nur noch alle Ausnahmen definiert werden und alle anderen würden automatisch mit dem Default-Wert ausgestattet.
+
+\section{Modellierung von Unsicherheit}
+Wie in dem vorher angeführten Beispiel gezeigt, gibt es Logiken, welche nicht sinnvoll mit wahr/falsch modellierbar sind. Es bietet sich an mit Wahrscheinlichkeiten zu arbeiten. so können Aussagen mit einer Wahrscheinlichkeit versehen werden um Ausnahmen darzustellen.
+Um komplexe Anwendungen mit vielen Variablen zu modellieren können Bayes-Netze verwendet werden.
+Zuletzt wurde außerdem noch die Fuzzy-Logik entwickelt um unscharfe Variablen modellieren zu können.
+
+Vergleicht man die verschiedenen Logikformalismen ergibt sich folgendes Bild:\\\\
+
+\begin{tabular}{ l p{4cm} p{4cm} }
+  Formalismus & Anzahl der Wahrheitswerte & Wahrscheinlichkeiten ausdrückbar\\
+  \hline
+  Aussagenlogik & 2 & nein \\
+  Fuzzy-Logik & $\infty$ & nein \\
+  diskrete Wahrscheinlichkeitslogik & n & ja\\
+  stetige Wahrscheinlichkeitslogik & $\infty$ & ja\\
+\end{tabular}

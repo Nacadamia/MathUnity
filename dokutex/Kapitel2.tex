@@ -1,0 +1,259 @@
+% !TeX root = Hausarbeit.tex
+\chapter{Prädikatenlogik}
+\label{Prädikatenlogik}
+
+In der Aussagenlogik sind Beziehungen zwischen bestimmten Variablen nicht ausdrückbar. Genauso können Eigenschaften für alle oder existierende Variablen in der Aussagenlogik nicht beschrieben werden. In der Prädikatenlogik sind jedoch diese Beziehungen und Eigenschaften ausdrückbar.\\
+Die Prädikatenlogik erweitert die Aussagenlogik um Quantifizierungen, Konstanten, Variablen, Funktionssymbole und Prädikatensymbole. In Kombination mit den vorherigen vorgestellten Junktoren aus der Aussagenlogik handelt es sich um die Prädikatenlogik der Stufe 1.
+
+
+\section{Syntax}
+\label{PSyntax}
+
+\textbf{Definition Terme:}\\ 
+Zu den Termen gehören die Menge aller Variablen und Konstanten, diese werden atomare Terme genannt. Ein Funktionssymbol, das aus $n$-Termen besteht ist auch ein Term. Hierbei sind die Menge aller Variablen, Konstanten und Funktionssymbole paarweise disjunkt.\cite[S.38 Def. 3.1]{GrundkursKI}\\
+
+\textbf{Beispiel für Terme:}
+\begin{itemize}
+\item Variable: $ x $
+\item Konstanten: $3$ 
+\item Funktionssymbol: $exp(x)$
+\end{itemize}
+
+\textbf{Definition Quantoren: }\\
+Quantoren legen fest, für welche Variablen $x$ einer Grundmenge eine Aussageform $A(x)$ gilt, so gibt es den Allquantor und den Existenzquantor. \\
+Der Allquantor beschreibt das für alle Variablen der Grundmenge das eine Aussageform $A(x)$, welche von der Variable x abhängig ist, diese Aussage gilt. \\
+Der Existenzquantor beschreibt hingegen, dass es mindestens eine Variable aus der Grundmenge gibt, bei der Aussage $A(x)$ gilt. Des Weiteren gilt die Regel: 
+\begin{center}
+  $\forall x \varphi \equiv \neg \exists  \neg \varphi$
+ \end{center}
+Der All- und Existenzquantor sind über diese Regel gegenseitig ersetzbar.\\
+
+\textbf{Beispiel:}\\
+\begin{center}
+$\forall x\epsilon \mathbb{N}_0: x\leq0$
+\end{center}
+\glqq Für alle $x$ aus dem Bereich der natürlichen Zahlen inklusive 0 gilt, dass $x \leq 0$ ist.\grqq{} \\
+Diese Aussage ist logischer Weise falsch, da z.B. $1$ eine natürliche Zahl ist und größer gleich $0$ ist. Die korrekte Formulierung wäre:\\
+\begin{center}
+$\exists x\epsilon \mathbb{N}_0: x\leq0$
+\end{center}
+\glqq Es gibt mindestens ein $x$ aus dem Bereich der natürlichen Zahlen inklusive $0$, wo gilt das $x\leq 0$ ist.\grqq{} Diese Aussage ist korrekt, da z.B. $0$ kleiner gleich $0$ ist.\\
+
+\textbf{Definition Prädikatenlogische Formeln:}
+\begin{itemize}
+\item Falls $P$ ein Prädikatensymbol ist, mit $k$ Anzahl an Argumenten und $t_1,...,t_k$ Terme sind, so ist $P(t_1,...,t_k)$ eine atomare Formel.
+\item Falls $F$ eine Formel oder eine atomare Formel ist, so ist die Negation von $F$ auch eine Formel oder atomare Formel
+\item $P(t_1,...,t_n)$ und $\neg P(t_1,...,t_n)$ heißen Literale.
+\item Falls $F$ und $G$ Formeln sind, so sind Kombinationen der Formeln mit Junktoren, bekannt aus der Aussagenlogik, z.B. $(F \wedge G)$ und $(F \vee G)$ auch Formeln
+\item Falls $x$ eine Variable ist und $F$ eine Formel, so sind auch $\forall x:F$ und $\exists x: F$ Formeln. 
+\item Aussagen oder auch geschlossene Formeln werden so genannt, bei denen jede Variable im Wirkungsbereich eines Quantors liegt, das Gegenteil nennt man freie Variablen.
+\item Die Definition der Konjunktiven Normalform und der Hornklausel gelten für Formeln analog.
+\end{itemize}
+
+\cite[vgl. S.38 Def. 3.2]{GrundkursKI}
+
+
+\section{Semantik}
+\label{PSemantik}
+\glqq In der Prädikatenlogik wird die Bedeutung von Formeln rekursiv über den Formelaufbau definiert, indem wir zuerst den Konstanten, Variablen und Funktionssymbolen Objekte in der realen Welt zuordnen.\grqq{} \cite[S.38]{GrundkursKI} Anders ausgedrückt repräsentieren Formeln erst Aussagen, wenn den Funktionssymbolen, Konstanten und Variablen richtige Objekte zugewiesen werden, die wahr oder falsch sein können.\\
+
+\textbf{Beispiel: }\\
+$ (mann(x) \Rightarrow \neg frau(x))$\\
+Wenn x ein Mann ist, dann ist x keine Frau\\
+
+Hans ist z.B. ein Objekt\\
+$ (mann(Hans) \Rightarrow \neg frau(Hans))$\\
+Wenn Hans ein Mann ist, dann ist er keine Frau -> Hans ist Mann, ergo keine Frau.\\
+
+\textbf{Definition: Belegung bzw. Interpretation}\\
+In der Prädikatenlogik ist eine Belegung bzw. eine Interpretation eine Abbildung, die jeder freien Variable ein Element aus einer Grundmenge, oder auch Universum genannt, zugeordnet wird. Jedem n-stelligen Funktionssymbol wird eine n-stellige Funktion aus der Grundmenge zugeordnet und jedem n-stelligen Prädikatssymbol wird eine n-stellige Relation aus der Grundmenge zugeordnet.\cite[vgl. S.40 Def. 3.3]{GrundkursKI}\\
+
+\textbf{Definition: Wahrheit}\\
+Ist eine Formel Quantorenfrei, ergibt sie dich Wahrheit aus den atomaren Formeln, wie in der Aussagenlogik. Enthält eine Formel einen Allquantor, z.B. $ \forall x: Formel  $, dann ist die Formel gültig, wenn sie für alle Belegungen für die Variable x wahr ist. Bei einem Existenzquantor, z.B. $ \exists x: Formel$ muss mindestens eine Belegung für die Variable x geben, welche die Formel wahr macht.\cite[vgl. S.40 Def. 3.4]{GrundkursKI}\\
+ 
+Die in der Aussagenlogik vorgestellten Sätze des Deduktionstheorems und des Widerspruchsbeweises gelten auch für die Prädikatenlogik erster Ordnung.\\
+
+Wolfgang Ertel\cite{GrundkursKI} veranschaulicht an einem Beispiel, dass eine Formel von der Belegung abhängig ist, ob eine Formel der Wahrheit entspricht oder nicht. \\
+
+\begin{center}
+$
+F\equiv gr(plus(c_1,c_3),c_2)
+$\\
+\,
+$
+Belegung_1 : c_1 \mapsto 1 , c_2 \mapsto 2 , c_3 \mapsto 3 , plus \mapsto + , gr \mapsto >  
+$\\
+$1+2 > 2$ nach Auswertung $4 > 2$\\
+\,
+$
+Belegung_2 : c_1 \mapsto 2 , c_2 \mapsto 3 , c_3 \mapsto 1 , plus \mapsto - , gr \mapsto >  
+$\\
+$2-1 > 3$ nach Auswertung $1 > 3$
+\end{center}
+\cite[vgl. S.41]{GrundkursKI}\\
+
+\glqq Die Wahrheit einer Formel in PL1 hängt also von der Belegung ab.\grqq{}\cite[S.40]{GrundkursKI}\\
+
+In der Wissensbasis (WB) können Relationen formalisiert werden, um z.B. die semantische Eindeutigkeit von Funktionssymbolen zu garantieren, so wird in Kapitel 3.2.1 von Wolfgang Ertel die Äquivalenzrelation die Prädikatenlogik definiert, sodass diese auch auf Funktionssymbolen und Prädikatensymbole funktionieren. Die Gleichheit ist in der Mathematik so definiert, dass die Relation reflexiv, symmetrisch und transitiv ist.\cite[S.43]{GrundkursKI}
+
+
+\section{Quantoren und Normalform}
+\label{Quantoren und Normalform}
+In der KI werden Formeln die Quantoren besitzen in einer äquivalenten standardisierten Normalform umgewandelt, damit möglichst wenig Quantoren in einer Formel auftauchen. Der Grund für die Umwandlung ist das Quantoren die Struktur der Formeln komplexer und dadurch das Beweisen mit anwendbarer Inferenzregeln umständlicher machen. \cite[vgl. S.44]{GrundkursKI}
+
+So ist eine prädikatenlogische Formel $P$ in pränexer Normalform, wenn alle Quantoren am Anfang der Formel sind und nach allen Quantoren eine quantorenfreie Formel folgt. \cite[vgl. S.44]{GrundkursKI}\\
+
+\textbf{Definition Pränexer Normalform}\\
+Eine prädikatenlogische Formel $\\varphi$ ist in pränexer Normalform, wenn gilt
+\begin{itemize}
+\item $\varphi = Q_1x_1...Q_nx_n\psi$ 
+\item $\psi$ ist eine quantorenfreie Formel
+\item $Q_i \epsilon {\forall,\exists}$ für $i=1,...,n$.
+\end{itemize}
+\cite[vgl. S.44 Def. 3.6]{GrundkursKI}\\
+Eine prädikatenlogische Formel lässt sich äquivalent in eine pränexer Normalform umwandeln. \cite[vgl. S.46 Satz 3.2]{GrundkursKI}
+
+Um die Komplexität der Formel weiter zu verringern, können mit Hilfe der Skolemisierung alle Existenzquantoren eliminiert werden. Die resultierende Formel ist zwar nicht gleich der Ausgangsformel, jedoch bleibt die Erfüllbarkeit erhalten. Dies ist jedoch in vielen Fällen ausreichend, wenn man wie bei der Resolution die Unerfüllbarkeit von $WB \wedge \neg Q$ zeigen will.\cite[vgl. S.46]{GrundkursKI} 
+
+Nach der Skolemisierung erhält man eine Formel in konjunktiver Normalform. Dieses Verfahren kann in ein Programmschema dargestellt werden, wie in der Abbildung \ref{img:normalformtransformation} veranschaulicht. 
+
+
+
+Ertel beschreibt außerdem, dass bei Transformation in die Normalform die Anzahl der Literale im worst-case exponentiell anwachsen, was zu exponentieller Rechenzeit und Speicherbedarf führen kann. Die Folge daraus ist, dass der Suchraum für einen anschließenden Resolutionsbeweis explosionsartig anwächst. \cite[vgl. S.47]{GrundkursKI} \\
+
+\textbf{Beispiel: Normalformtransformation}\\
+\begin{center}
+$\forall x\exists y\forall zK(g(a,z),y)\implies K(g(f(a),f(z)),x)$\\
+Skolemform\\
+$\neg K(g(a,z),s(x))\vee K(g(f(a),f(z)),x)$\\
+\end{center}
+
+
+\section{Resolution}
+\label{Resolution}
+Wolfgang Ertel beschreibt das Resolutionskalkül als eines der wichtigsten in der Praxis verwendeten automatisierbaren Kalkül für Formeln in konjunktiver Normalform. Es gibt noch weitere Kalküle wie z.B. das Gentzenkalkül oder das Sequenzenkalkül, diese sind jedoch nicht für Automatisierung gedacht. \cite[vgl. S.47]{GrundkursKI}
+
+Ein Kalkül ist eine Sammlung von syntaktischen Umformungsregeln, die unter gegebenen Voraussetzungen aus bereits vorhandenen Formeln neue Formeln erzeugen.
+  
+Die Resolution ist ein eine Art Erfüllbarkeitstest um eine Formel auf ihre Gültigkeit zu testen. Das im Jahr 1965 vorgestellte Resolutionskalkül ist ein Widerlegungskalkül, welches die Formel auf Unerfüllbarkeit testet. Die Idee ist es die einen logischen Widerspruch durch Verneinung der Formel abzuleiten, anstatt direkt die Allgemeingültigkeit der Formel zu zeigen. Anders ausgedrückt, um zu zeigen, das eine Formel allgemeingültig ist, muss gezeigt werden, dass die Verneinung der Formel unerfüllbar ist.
+
+Das Resolutionskalkül ist aus der Aussagenlogik bekannt und besteht aus einer einzigen Umformungsregel. Entsteht durch die Resolution eine leere Klausel so ist die negierte Formel unerfüllbar und somit die nicht negierte Formel allgemeingültig. 
+
+Das gesamte Verfahren dient dazu, die Unerfüllbarkeit einer Formel in der Konjunktiven Normalform zu testen und gegebenenfalls nachzuweisen. Beim Verfahren muss man jedoch beachten, dass das Verfahren für einige Eingaben exponentielle Laufzeit besitzt.
+
+Um die Resolution von der Aussagenlogik in die Prädikatenlogik auszuweiten, müssen die prädikatenlogischen Formeln umgeformt werden.
+
+Im ersten Schritt wird die zu beweisende Formel negiert und durch die vorher beschriebenen Verfahren in eine der Aussagenlogik ähnliche konjunktive Normalform normalisiert. 
+
+Die Formel wird also in die Pränexeform gebracht, sprich alle Quantoren stehen am Anfang der Formel und hat die Gestalt einer konjunktiven Normalform. Anschließend werden alle Existenzquantoren durch die Skolemfunktion entfernt. Die Resultierenden Allquantoren können entfernt werden und das Ergebnis ist die Formel in Klauselform. In der vorhin gezeigten Abbildung \ref{img:normalformtransformation} ist die strukturierte Beschreibung der Normalformtransformation zu finden.
+
+Im nächsten Schritt wird die Unifikation eingesetzt. Die Unifikation ist ein Ersetzungsschritt, um prädikatenlogische Ausdrücke zu vereinheitlichen.\\
+
+\textbf{Definition Unifikation:}\\
+Zwei Literale heißen unifizierbar, wenn es eine Ersetzung $\sigma$ für alle Variablen gibt, welche die Literale gleich macht. Solch ein $\sigma$ wird Unifikator genannt. Ein Unifikator heißt allgemeinster Unifikator (engl. most general unifier (MGU)), wenn sich aus ihm alle anderen Unifikatoren durch Ersetzung von Variablen ergeben. \cite[vgl. S.51]{GrundkursKI}\\
+
+
+\textbf{Beispiel:}\\
+Die Literale $P(f(g(x)), y, z)$ und  $P(u, u, f(u))$ scheinen nicht resolvierbar zu sein, da sich die Terme unterscheiden. Jedoch sieht man durch die unifizierung, das beide vereinheitlicht werden können.\\
+
+\begin{center}
+$\sigma: \qquad y/f(g(x)),\qquad z/f(f(g(x))),\qquad u/f(g(x))$
+\end{center}
+So ergeben sich durch die Unifizierung folgende Literale.
+
+\begin{center}
+$P(f(g(x)), f(g(x), f(f(g(x))$ und  $P(f(g(x)), f(g(x)) , f(f(g(x))))$
+\end{center}
+Diese kann nun resolviert werden, entsteht nun durch die aus der Aussagenlogik bekannten  Resolvierung eine leere Klausel, so ist die negierte Formel unerfüllbar.\cite[vgl. S.52]{GrundkursKI}\\
+
+
+\textbf{Definition Prädikatenlogische Resolutionsregel:}\\
+
+\begin{center}
+$\dfrac{( A_1 \vee ... \vee A_m \vee B ), \quad ( \neg B \vee C_1 \vee ... \vee C_n) \qquad \sigma(b) = \sigma(B')}{\sigma(A_1) \vee ... \vee \sigma(A_m)\vee \sigma(C_1) \vee ... \vee \sigma(C_n)}
+$
+\end{center}
+wobei $\sigma$ der "Most General Unifier"\,  von $B$ und $B'$ ist.\cite[S.52]{GrundkursKI}\\
+
+\textbf{Definition Faktorisierung einer Klausel}\\
+
+\begin{center}
+$\dfrac{( A_1 \vee A_2 \vee ... \vee A_n) \quad \sigma(A_1) = \sigma(A_2)}{\sigma(A_1) \vee ... \vee \sigma(A_n)}
+$
+\end{center}
+wobei $\sigma$ der "Most General Unifier"\,  von $A_1$ und $A_2$ ist.\cite[vgl. S.52]{GrundkursKI}\\
+
+Beim Resolutionsverfahren von prädikatenlogischen Klauseln kann es vorkommen, das gleichartige Terme mehr als einmal in der Resolvente stehen. Diese Klauseln kann man durch Faktorisierung vereinfachen. Ein anschauliches Beispiel ist das Barbier-Paradoxon.\\
+
+\textbf{Beispiel:}\\
+\glqq 
+Es gibt einen Barbier der alle Menschen rasiert, die sich nicht selbst rasieren.\grqq In Prädikatenlogik der Stufe 1 formuliert:\\
+\begin{center}
+$\forall x \, rasiert(barbier, x) \Leftrightarrow \neg rasiert(x, x)$
+\end{center}
+In diesem Beispielist die Aussage von Beginn an widersprüchlich ist und wir möchten durch Resolution die Unerfüllbarkeit ableiten. Durch die Normalformtransformation ergibt sich folgende Klauselform:\\
+\begin{center}
+$
+(\neg rasiert(barbier, x) \vee \neg rasiert(x, x))_1 \wedge (rasiert(barbier, x) \vee rasiert(x, x))_2
+$
+\end{center}
+Mit dieser Klausel lässt sich noch kein Widerspruch ableiten, deswegen wäre es hier sinnvoll zu faktorisieren und auf die die faktorisierten Klauseln das Resoultionsverfahren anzuwenden.
+
+Faktorisierung der ersten Klausel:\\
+\begin{center}
+$
+\dfrac{\neg rasiert(barbier, x) \vee \neg rasiert(x, x) \quad \sigma' = [x/barbier]}{\neg rasiert(barbier, barbier)_F1}
+$
+\end{center}
+Faktorisierung der zweiten Klausel:\\
+\begin{center}
+$
+\dfrac{rasiert(barbier, x) \vee rasiert(x, x) \quad \sigma'' = [y/barbier]}{ rasiert(barbier, barbier)_F2}
+$
+\end{center}
+
+Aus den beiden faktorisierten Klauseln kann nun die leere Klausel abgeleitet werden.
+\begin{center}
+$
+Res(F1,F2) : leere\, Klausel
+$
+\end{center}
+\cite[vgl. S.52]{GrundkursKI}
+
+Die Resolutionsregel ist nicht vollständig, jedoch in Kombination mit der Faktorisierungsregel ist sie widerlegungsvollständig. Das heißt durch Anwendung beider Regeln lässt sich aus jeder unerfüllbaren Formel die leere Klausel ableiten.\cite[vgl. S.53 Satz 3.6]{GrundkursKI}\\
+
+In der Praxis ist aufgrund des großen kombinatorischen Suchraums beim Resolutionsverfahren, die Suche nach einem Beweis sehr aufwändig. Der Beweiser erzeugt selbst nach Unifizierung mir jedem Schritt eine neue Klausel, welches die Anzahl an Klauseln im nächsten Resolutionssschritt erhöht. Aufgrund dessen wurden verschiedene Strategien entwickelt, um den Suchraum einzuschränken.
+
+Zu den wichtigsten Strategien gehören die Unit-Resolution, Set of Support-Strategie, Input-Resolution, Pure Literal-Regel und die Subsumption. Die Unit-Resolution führt nicht immer zu einer Reduzierung des Suchraumes, daher gehört er zu den heuristischen Verfahren. Die Set of Support-Strategie (SOS) hingegen reduziert den Suchraum. Hier wird eine Teilmenge von $WB \wedge \neg Q$ als (SOS) definiert und bei jedem Resolutionsschritt wird eine Klausel aus dem SOS genommen. Die Strategie ist nicht vollständig, deshalb muss sichergestellt werden, dass die Menge der Klauseln auch ohne das SOS erfüllbar ist. Die Input-Resolution reduziert den Suchraum, in dem an jedem Resolutionsschritt eine Klausel der Eingabemenge $WB \wedge \neg Q$ beteiligt ist, sie ist auch nicht vollständig. Die Pure Literal-Regel ist vollständig und wird auch aktiv in der Praxis verwendet, hier werden alle Klauseln entfernt, die Literale enthalten, zu denen es kein komplementäres Literal in den anderen Klauseln gibt. Bei der Subsumption werden auch Klauseln entfernt z.B. $K_2$, wenn Literale einer Klausel $K_1$ eine Teilmenge der Literale der anderen Klausel $K_2$ darstellen. [VGgl. S.53f] 
+Ein weitere Quelle für eine Vergrößerung des Suchraumes ist die Gleichheit. Enthält eine Wissensbasis Gleichheitsaxiome und kann dies dazu führen das bei deren Ableitung neue Klauseln mit Gleichungen entstehen, auf die wieder Gleichheitsaxiome anwendbar sind. So wurden Inferenzregeln für Gleichheit entwickelt, wie z.B. die Demodulation, Paramodulation und Termersetzungssysteme für gerichtete Gleichungen.\cite[vgl. S.54]{GrundkursKI}
+
+\section{Automatische Theorembeweiser}
+\label{Automatische Theorembeweiser}
+Automatische Theorembeweiser sind Beweiskalküle, welche auf Rechnern implementiert wurden. Neben Spezialbeweisern für Teilmengen von PL1 existieren auch Beweiser für die volle Prädikatenlogik oder Logiken höherer Stufe.
+
+So wurde bereits 1984 ein Resolutionsbeweiser namens Otter entwickelt, welcher vor allem in Spezialgebieten der Mathematik eingesetzt wurde.
+An der Universität München wurde der Beweiser SETHEO und später der auf Parallelrechnern implementierte Beweiser PARTHEO entwickelt.
+Später wurde dort auch noch der Gleichheitsbeweiser Namens E entwickelt.
+
+Es zeigt sich allerdings im Zuge dieser Entwicklungen auch, das Hardware-basierte Beweiser nicht lohnenswert sind, da die Hardwareentwicklung so schnell voranschreitet, dass die neuen Beweiser schnell wieder veraltet sind.
+
+Nimmt man in Betracht, dass sowohl Menschen als auch Maschinen bei vielen Beweisen an ihre Grenzen stoßen, so liegt es nahe, Eine kombinierte Version zu Entwickeln. So kann der Mensch mit seinem Vorwissen die Suche nach Beweisführungen einschränken und komplexe Einzelschritte von der Maschine übernehmen lassen.
+
+\section{Anwendungen}
+\label{Anwendung}
+Automatische Theorembeweiser spielen in der Mathematik lediglich eine untergeordnete Rolle und die Prädikatenlogik war hauptsächlich in der Anfangszeit der KI von größerer Bedeutung.
+
+Eine wichtige Rolle hingegen spielt die Logik heute bei Verifikationsaufgaben.
+Bei heutigen hoch komplexen Softwaresystemen ist es beinahe unmöglich alle Szenarien zu testen. Dies bietet ein gutes Einsatzgebiet für Inferenzsysteme. Auch können Sicherheitseigenschaften von kryptographischen Protokollen automatisch verifiziert werden.
+
+Des Weiteren wird auch die Wiederverwendung von Softwaremodulen durch Logik unterstützt. So kann ein Programmierer auf der Suche nach einem Modul durch Prädikatenlogik Vorbedingungen $PRE_Q$ und Nachbedingungen $POST_Q$ des gesuchten Moduls formulieren werden. Bei der Suche nach einem passenden Modul $M$ muss nun also $PRE_Q \Rightarrow PRE_M$ gelten.
+
+Es müssen also bei $M$ alle Voraussetzungen von $PRE_Q$ gegeben sein. Zusatzbedingungen sind hier kein Problem.
+
+Außerdem muss nun logischerweise auch für die Nachbedingungen $POST_M \Rightarrow POST_Q$ gelten. Es muss also nach der Anwendung von $M$ alle von der Anfrage geforderten Eigenschaften erfüllt sein.\\
+
+Eine weiteres Anwendungsgebiet der PL1 stellt das \glqq Semantic Web\grqq{} dar, wodurch das World Wide Web für Maschinen besser interpretierbar wird.
+Durch die Erweiterung von Web-Seiten  durch Beschreibungen ihrer Semantik, in einer formalen Beschreibungssprache, kann das Web effektiver nach syntaktischen Textbausteinen durchsucht werden.
+Diese Beschreibungssprache besteht aus entscheidbaren Teilmengen der Prädikatenlogik, wobei die Entwicklung von effizienten Kalkülen für das Schließen einen zentralen Punkt darstellt.\\
+Das World Wide Web Consortium entwickelte die Sprache RDF (Resource Description Framework). 
+OWL (Web Ontology Language), eine auf RDF aufbauende und deutlich mächtigere Sprache, erlaubt außerdem die Beschreibung von Relationen zwischen Objekten und Klassen von Objekten.
