@@ -17,16 +17,13 @@ public class Bewegung : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        
-		
+        	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-        
-   
-        
+           
 		if(currentWayPoint < this.wayPointList.Length)
          {
              if(targetWayPoint == null)

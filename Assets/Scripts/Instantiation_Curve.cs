@@ -5,17 +5,14 @@ using UnityEngine;
 
 public class Instantiation_Curve : MonoBehaviour
 {
+    
     public Transform brick;
-
     public Transform playerC;
-
-    //public ArrayList<Vector3> points = new ArrayList<Vector3>(); 
-    //public Transform[] wayPoints = new Transform[100];
     private const int PUNKTMENGE = 400;
-    public Vector3[] points = new Vector3[PUNKTMENGE];
+    private Vector3[] points = new Vector3[PUNKTMENGE];
 
     /// <summary>
-    /// Awake is called when the script instance is being loaded.
+    /// Awake wird aufgerufen wenn instantiiert wird. 
     /// </summary>
     void Awake()
     {
@@ -23,8 +20,15 @@ public class Instantiation_Curve : MonoBehaviour
         {
             Instantiate(brick, new Vector3(FvonT(x), 1, GvonT(x)), Quaternion.identity);
             Instantiate(brick, new Vector3(0.90f * FvonT(x), 1, 0.90f * GvonT(x)), Quaternion.identity);
+            
+            //Erzeugen der Wegpunkt Koordinaten
             Vector3 posVector = new Vector3(1, (float) 0.95 * FvonT(x), (float) 0.95 * GvonT(x));
-            points[x + 5] = posVector;
+            
+            if(x <= points.Length)
+                //Abspeichern der Koordinaten für die Pfadanimation
+                points[x + 5] = posVector;
+
+            //Instantiieren der Wegpunkte für die Pfadanimation
             Instantiate(playerC, posVector, Quaternion.identity);
         }
     }
@@ -34,27 +38,19 @@ public class Instantiation_Curve : MonoBehaviour
     {
     }
 
+    //Funktion für die X-Koordinate
     float FvonT(float t)
     {
         float x = (Mathf.Pow(t, 2) / points.Length);
         return x;
     }
-
-    float FvonT_inner(float t)
-    {
-        float x = (Mathf.Pow(t, 2) / points.Length);
-        return (float) 0.9 * x;
-    }
-
+    
+    //Funktion für die Z-Koordinate
     float GvonT(float t)
     {
         float z = ((Mathf.Pow(1 * t, 3) - 3 * t) / points.Length);
         return z;
     }
 
-    float GvonT_inner(float t)
-    {
-        float z = ((Mathf.Pow(1 * t, 3) - 3 * t) / points.Length);
-        return (float) 0.9 * z;
-    }
+  
 }

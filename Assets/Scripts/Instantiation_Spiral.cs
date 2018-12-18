@@ -22,7 +22,6 @@ public class Instantiation_Spiral : MonoBehaviour
             Instantiate(brick, new Vector3(FvonT(x), plane.transform.position.y + 0.1f, GvonT(x)), Quaternion.identity);
             Vector3 posVector = new Vector3((float) FvonT(x), 1, (float) GvonT(x));
             points[x] = posVector ;
-            
             Instantiate(playerC, posVector, Quaternion.identity);
         }
     }

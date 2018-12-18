@@ -26,7 +26,7 @@ public class Instantiation : MonoBehaviour
         for (int x = 0; x < points.Length; x++)
         {
             Instantiate(brick, new Vector3(FvonT(x), plane.transform.position.y + 0.2f, GvonT(x)), Quaternion.identity);
-            Instantiate(brick, new Vector3((float) 0.97f * FvonT(x), plane.transform.position.y + 0.2f , (float) 0.97f * GvonT(x)), Quaternion.identity);
+            Instantiate(brick, new Vector3( 0.97f * FvonT(x), plane.transform.position.y + 0.2f ,  0.97f * GvonT(x)), Quaternion.identity);
             Vector3 posVector = new Vector3((float) 0.99 * FvonT(x), plane.transform.position.y + 0.2f, (float) 0.99 * GvonT(x));
             points[x] = posVector;
             Instantiate(playerC, posVector, Quaternion.identity);

@@ -46,7 +46,7 @@
 %\usepackage{acronym}
 \usepackage{lscape} % ermoeglicht \begin{landscape} fuer querformat
 %\usepackage{currfile} % provides the file name and path information of the current input file
-
+\usepackage{todo}
 \usepackage{multicol}
 
 \usepackage{pdfpages}
@@ -218,7 +218,7 @@ captionpos=b
 %#############################################################
 
 \begin{document}
-%\includepdf{deckblatt}
+\include{Deckblatt}
 	
 	
 	\pagestyle{plain}	%Default-Einstellung; Leere Kopfzeile und eine Fu�zeile bestehend aus der zentrierten Seitenzahl
@@ -254,7 +254,7 @@ captionpos=b
 	
 	\singlespacing
 
-	\bibliography{literatur}
+	\bibliography{Quellen}
 	\bibliographystyle{apalike}
 	\nocite{*} % nicht referenzierte Literatur anzeigen
 	\addcontentsline{toc}{chapter}{Literatur}
@@ -276,6 +276,6 @@ captionpos=b
 
 \raggedright
 
-%\todos
+\todos
 
 \end{document}
