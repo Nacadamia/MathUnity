@@ -32,11 +32,13 @@ public class Graph : MonoBehaviour {
 	}
 
 	void Update () {
-		for (int i = 0; i < points.Length; i++) {
+	/*	for (int i = 0; i < points.Length; i++) {
 			Transform point = points[i];
 			Vector3 position = point.localPosition;
             position.y = (Mathf.Pow(i, 3) * a) * Stauchung; //Mathf.PI * (position.x + Time.time));
 			point.localPosition = position;
-		}
+		*/
+		
 	}
 }
+

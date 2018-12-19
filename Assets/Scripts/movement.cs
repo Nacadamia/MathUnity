@@ -9,10 +9,10 @@ public class movement : MonoBehaviour
     public Transform target;
     public int x = 0;
     public float speed = 0.5f;
-    public GameObject[] playerC;
+    private GameObject[] playerC;
     public GameObject[] wayPoints;
     public GameObject Player;
-    public float naeherung = 0.10f;
+    public float naeherung = 0.01f;
 
 
     void Awake()
