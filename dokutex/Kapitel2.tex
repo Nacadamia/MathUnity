@@ -128,7 +128,7 @@ Die Szene enthält den einen Kreis, der beim Start erzeugt wird. Dieser wird mit
 \end{figure}
 
 
-Die Szene enthält den eine Spirale, die beim Start erzeugt wird. Diese wird mit konstanter Geschindigkeit abgefahren. Die Spirale ist mit leuchtenden Quadraten auf dem Boden markiert. Bei Erreichen der letzten Koordinate bewegt sich der Spieler wieder in Richtung des Startpunktes. 
+Die Szene enthält den eine Spirale, die beim Start erzeugt wird. Diese wird mit konstanter Geschwindigkeit abgefahren. Die Spirale ist mit leuchtenden Quadraten auf dem Boden markiert. Bei Erreichen der letzten Koordinate bewegt sich der Spieler wieder in Richtung des Startpunktes. 
 
 \subsection{3D - Elemente}
 
@@ -136,7 +136,7 @@ Die Szene enthält den eine Spirale, die beim Start erzeugt wird. Diese wird mit
 
 \textbf{Capsule: } Der Spieler wird mit Hilfe eines GameObjects in Form einer Capsule repräsentiert. Das Camera Rig ist mit Hilfe eines Scripts an dieses Objekt gebunden. Die Capsule hat die Markierung: Player.
 
-\textbf{Flat: } Bricks sind Prefabs, die zur Laufzeit erzeugt werden. Ein einzelner Brick ist konfiguriert, ein Script instanziert Kopien davon.
+\textbf{Flat: } Flats sind Prefabs, die zur Laufzeit erzeugt werden. Ein einzelner Flat ist konfiguriert, ein Script instanziiert Kopien davon.
 
 \textbf{PlayerC: } PlayerC Objekte liegen ebenfalls als Prefab vor. Sie werden in Abhängigkeit der Bricks erzeugt und beschreiben die Positionen, die während der Pfadanimation verwendet werden. PlayerC sind auch GameObjects, haben aber keinen Mesh-Renderer also sind sie unsichtbar. Sie sind als "waypoint" getagged.
 
@@ -162,7 +162,7 @@ Die Szene enthält den eine Spirale, die beim Start erzeugt wird. Diese wird mit
 	\caption{Ansicht Graph Scene}
 \end{figure}
 
-Die Szene enthält den ein Graphen, der beim Start erzeugt wird. Der Graph wird durch leuchtende Würfel dargestellt und ersteckt sich von (0,0,0) in \glqq den Himmel\grqq{}.
+Die Szene enthält den ein Graphen, der beim Start erzeugt wird. Der Graph wird durch leuchtende Würfel dargestellt und erstreckt sich von (0,0,0) in \glqq den Himmel\grqq{}.
 
 Eine Besonderheit dieser Szene ist die Bewegung des Spielers. Im Gegensatz zu den anderen beiden Szenen ist es dem Spieler überlassen, einen geeigneten Standort für die Betrachtung des Graphen zu wählen. Dies geschieht über Teleportation. 
 
