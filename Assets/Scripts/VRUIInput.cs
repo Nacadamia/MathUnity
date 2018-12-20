@@ -33,6 +33,14 @@ public class VRUIInput : MonoBehaviour
         }
     }
 
+     private void HandleGripped(object sender, ClickedEventArgs e)
+    {
+        if (EventSystem.current.currentSelectedGameObject != null)
+        {
+            ExecuteEvents.Execute(EventSystem.current.currentSelectedGameObject, new PointerEventData(EventSystem.current), ExecuteEvents.submitHandler);
+        }
+    }
+
     private void HandlePointerIn(object sender, PointerEventArgs e)
     {
         var button = e.target.GetComponent<Button>();
