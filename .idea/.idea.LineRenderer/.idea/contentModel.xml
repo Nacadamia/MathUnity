@@ -126,18 +126,13 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Bewegung.cs" t="Include" />
           <e p="CameraController.cs" t="Include" />
           <e p="Circle_Scene.cs" t="Include" />
           <e p="Graph.cs" t="Include" />
           <e p="Instantiation.cs" t="Include" />
           <e p="Instantiation_Curve.cs" t="Include" />
           <e p="Instantiation_Spiral.cs" t="Include" />
-          <e p="LaserPointer.cs" t="Include" />
-          <e p="meshrender.cs" t="Include" />
           <e p="movement.cs" t="Include" />
-          <e p="spielerzug.cs" t="Include" />
-          <e p="Testkreis.cs" t="Include" />
           <e p="VRUIInput.cs" t="Include" />
           <e p="VRUIItem.cs" t="Include" />
         </e>
