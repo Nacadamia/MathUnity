@@ -8,7 +8,15 @@ Im vorliegenen Projekt wurde für jede Parameterkurve eine eigene Szene erstellt
 \section{Circle}
 \label{Kreis}
 
+\begin{figure}[h!]
+	\includegraphics[scale=0.5]{bilder/CircleScene.png}
+	\caption{Ansicht Circle Scene}
+\end{figure}
+
+
 Die Szene enthält den einen Kreis, der beim Start erzeugt wird. Dieser wird mit konstanter Geschwindigkeit umlaufen. Der Kreis ist mit kleinen Pfosten markiert, die eine Gasse bilden, durch die sich der Spieler automatisch bewegt.
+
+
 
 \subsection{3-D Elemente}
 
@@ -60,6 +68,12 @@ Dieses Script ist dem Button, der zur Szene mit der Spirale führt angehängt. E
 \section{Spiral}
 \label{Spirale}
 
+\begin{figure}[h!]
+	\includegraphics[scale=0.5]{bilder/spiralScene.png}
+	\caption{Ansicht Spiral Scene}
+\end{figure}
+
+
 Die Szene enthält den eine Spirale, die beim Start erzeugt wird. Diese wird mit konstanter Geschindigkeit abgefahren. Die Spirale ist mit leuchtenden Quadraten auf dem Boden markiert. Bei Erreichen der letzten Koordinate bewegt sich der Spieler wieder in Richtung des Startpunktes. 
 
 \subsection{3D - Elemente}
@@ -88,6 +102,11 @@ Die Rückgabewerte der Funktionen $f$ und $g$ sind auf 10\% skaliert, damit die 
 \section{Graph}
 \label{ graphScene }
 
+\begin{figure}[h!]
+	\includegraphics[scale=0.85]{bilder/graphScene.jpg}
+	\caption{Ansicht Graph Scene}
+\end{figure}
+
 Die Szene enthält den ein Graphen, der beim Start erzeugt wird. Der Graph wird durch leuchtende Würfel dargestellt und ersteckt sich von (0,0,0) in \glqq den Himmel\grqq{}.
 
 Eine Besonderheit dieser Szene ist die Bewegung des Spielers. Im Gegensatz zu den anderen beiden Szenen ist es dem Spieler überlassen, einen geeigneten Standort für die Betrachtung des Graphen zu wählen. Dies geschieht über Teleportation. 
@@ -110,11 +129,10 @@ Mit dem linken Controller, der einen Laserstrahl emittiert wird das Ziel gewähl
 
 \subsection{Scripts}
 \textbf{Instantiate\_Curve.cs}
-\todo{Graph Beschreiben}
 
 Dieses Script dient dazu, den Graphen und die PlayerC Punkte zu erzeugen. In der Awake()-Methode werden diese mittels einer For-Schleife erzeugt. 
 
-Die Funktionen für $f$ und $g$ sind ebenfalls im Script. Diese werden bei jedem Brick bzw. PlayerC aufgerufen. Die X - Koordinate einer Parameterkurve wird über die Funktion $ f(t) = t^{2} $ definiert. Für Z gilt $g(t) = t^{3} - 3t$ analog. In diesem Koordinatensystem beschreibt Y die Hochachse.
+Die Funktionen für $f$ und $g$ sind ebenfalls im Script. Diese werden bei jedem Brick bzw. PlayerC aufgerufen. Die X - Koordinate einer Parameterkurve wird über die Funktion $ f(t) = t^{2} $ definiert. Für Z gilt $g(t) = t^{3} - 3t$ analog. 
 
 
 
