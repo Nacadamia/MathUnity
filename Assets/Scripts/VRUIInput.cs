@@ -10,12 +10,14 @@ public class VRUIInput : MonoBehaviour
 
     private void OnEnable()
     {
+        //Zuweisung vom Steam LaserPointer und seinen Events
         laserPointer = GetComponent<SteamVR_LaserPointer>();
         laserPointer.PointerIn -= HandlePointerIn;
         laserPointer.PointerIn += HandlePointerIn;
         laserPointer.PointerOut -= HandlePointerOut;
         laserPointer.PointerOut += HandlePointerOut;
 
+         //Zuweusung des Controllers
         trackedController = GetComponent<SteamVR_TrackedController>();
         if (trackedController == null)
         {
@@ -24,7 +26,7 @@ public class VRUIInput : MonoBehaviour
         trackedController.PadClicked -= HandleTriggerClicked;
         trackedController.PadClicked += HandleTriggerClicked;
     }
-
+    //Eventbehandlung für den Click auf das Touchpad, wird für die Auswahl der Schaltfläche benötigt.
     private void HandleTriggerClicked(object sender, ClickedEventArgs e)
     {
         if (EventSystem.current.currentSelectedGameObject != null)
@@ -32,15 +34,7 @@ public class VRUIInput : MonoBehaviour
             ExecuteEvents.Execute(EventSystem.current.currentSelectedGameObject, new PointerEventData(EventSystem.current), ExecuteEvents.submitHandler);
         }
     }
-
-     private void HandleGripped(object sender, ClickedEventArgs e)
-    {
-        if (EventSystem.current.currentSelectedGameObject != null)
-        {
-            ExecuteEvents.Execute(EventSystem.current.currentSelectedGameObject, new PointerEventData(EventSystem.current), ExecuteEvents.submitHandler);
-        }
-    }
-
+    //Eventhandling, der (Laser)Pointer "betritt" ein Objekt 
     private void HandlePointerIn(object sender, PointerEventArgs e)
     {
         var button = e.target.GetComponent<Button>();
@@ -51,6 +45,7 @@ public class VRUIInput : MonoBehaviour
         }
     }
 
+    //Eventhandling, der (Laser)Pointer "verlässt" ein Objekt
     private void HandlePointerOut(object sender, PointerEventArgs e)
     {
 

@@ -37,14 +37,14 @@ public class Instantiation_Curve : MonoBehaviour
     {
     }
 
-    //Funktion für die X-Koordinate
+    //f(t)
     float FvonT(float t)
     {
         float x = (Mathf.Pow(t, 2) / points.Length);
         return x;
     }
     
-    //Funktion für die Z-Koordinate
+    //g(t)
     float GvonT(float t)
     {
         float z = ((Mathf.Pow(1 * t, 3) - 3 * t) / points.Length);

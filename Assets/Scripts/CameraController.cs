@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
+        //Sucht den Spieler
         player = GameObject.Find("Capsule");
     }
 

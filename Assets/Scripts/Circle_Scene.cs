@@ -8,8 +8,8 @@ public class Circle_Scene : MonoBehaviour {
 
     public string sceneName;
 
-    // Use this for initialization
-    void Start () {
+//Bei Aktivierung wird die Szene gewechselt
+	void Start () {
         SceneManager.LoadScene(sceneName);		
 	}
 	

@@ -7,17 +7,17 @@ public class Button_Quit : MonoBehaviour {
 	
     public void Start()
     {
-        //If we are running in a standalone build of the game
-#if UNITY_STANDALONE
-        //Quit the application
+        //Im Build 
+     #if UNITY_STANDALONE //Meta Tag für den Interpreter
+        //Beenden der Anwendung
         Application.Quit();
-#endif
+    #endif
 
-        //If we are running in the editor
-#if UNITY_EDITOR
-        //Stop playing the scene
+        //Damit es auch im Editor funktioniert
+    #if UNITY_EDITOR
+        //Beenden der Application 
         UnityEditor.EditorApplication.isPlaying = false;
-#endif
+    #endif
     }
 
 }

@@ -17,17 +17,19 @@ public class movement : MonoBehaviour
 
     void Awake()
     {
+        //Player Objekt finden
         Player = GameObject.Find("Player");
+        //Wegpunkte anhand ihrer tags finden
         playerC = GameObject.FindGameObjectsWithTag("waypoint");
 
         if (playerC.Length > 0)
         {
-            target = playerC[0].transform;
+            target = playerC[0].transform; //Ziel ist der Positionsvektor
         }
 
         else
         {
-            Debug.Log("Leere Liste");
+            Debug.Log("Leere Liste"); // Geschieht in der Regel, wenn die Prefabs im Editor nicht zugeornet sind, oder keinen Tag haben
         }
 
         init_player_pos();
@@ -45,10 +47,13 @@ public class movement : MonoBehaviour
 
 
         //  transform.LookAt(target.position); //<--- alte, ruckelige Methode
+        
+        //Neue weiche Methode, Rotieren des Spielers über Zeit 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(target.position), Time.deltaTime * speed);
+        //Bewegung des Sipelers über Zeit 
         transform.position = Vector3.MoveTowards(transform.position, target.position, step);
 
-
+        //Wenn der Spieler nahe genug an einem Punkt ist, wird der nächste angesteuert. Im Grunde ein epsilon für die Näherung
         if (Vector3.Distance(transform.position, target.position) < naeherung)
         {
             target.position = playerC[x].transform.position;
@@ -57,7 +62,8 @@ public class movement : MonoBehaviour
                 x++;
         }
     }
-
+    
+    //Intitialisierung der Player Position
     void init_player_pos()
     {
         if (playerC != null && playerC.Length > 0)

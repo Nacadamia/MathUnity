@@ -9,7 +9,7 @@ public class Graph_Scene : MonoBehaviour
 
     public string sceneName;
 
-    // Use this for initialization
+    // Sobald das Script aktiv wird, wechselt die Szene 
     void Start()
     {
         SceneManager.LoadScene(sceneName);

@@ -135,7 +135,6 @@
     <Compile Include="Assets\MiddleVR\Scripts\Samples\VRZSpaceUsageSample.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Circle_Scene.cs" />
-    <Compile Include="Assets\Scripts\Graph.cs" />
     <Compile Include="Assets\Scripts\Instantiation.cs" />
     <Compile Include="Assets\Scripts\Instantiation_Curve.cs" />
     <Compile Include="Assets\Scripts\Instantiation_Spiral.cs" />
